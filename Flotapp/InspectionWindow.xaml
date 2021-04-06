@@ -1,0 +1,73 @@
+﻿<Window x:Class="Flotapp.InspectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flotapp"
+        mc:Ignorable="d"
+        Title="Historia przeglądów" Height="800" Width="1000">
+    <Viewbox>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="buttonEditInspection" Grid.Column="2" Grid.Row="1" Content="Edytuj przegląd" Padding="5" Margin="5" Click="ButtonEditInspection_Click"/>
+        <Button x:Name="buttonRemoveInspection" Grid.Column="3" Grid.Row="1" Content="Usuń przegląd" Padding="5" Margin="5" Click="ButtonRemoveInspection_Click"/>
+        <Button x:Name="buttonFilter" Grid.Column="4" Grid.Row="1" Content="Filtruj tabelę" Click="ButtonFilter_Click" />
+        <Button x:Name="buttonAddInspectionCompany" Grid.Column="1" Grid.Row="1" Content="Edytuj warsztaty" Click="buttonAddInspectionCompany_Click" Background="Green"/>
+            <TextBlock x:Name="textBlockWhatCar" Grid.Column="1" Grid.Row="3" Text="" Grid.ColumnSpan="3"/>
+            <DataGrid x:Name="gridInspection" Grid.Column="1" Grid.Row="2" AutoGenerateColumns="False" Grid.ColumnSpan="4" Width="800" Height="340" CanUserAddRows="False" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ID_INSPECTION}" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding Path=Firma}" Header="Warsztat" />
+                <DataGridTextColumn Binding="{Binding Path=DataRozpoczecia}" Header="Data rozpoczęcia"/>
+                <DataGridTextColumn Binding="{Binding Path=DataZakonczenia}" Header="Data zakończenia"/>
+                <DataGridTextColumn Binding="{Binding Path=Archiwalny}" Header="Archiwalny?"/>
+                <DataGridTextColumn Binding="{Binding Path=ID_INSPECTION_COMPANY_fk}" Header="ID_INSPECTION" Visibility="Collapsed"/>
+                </DataGrid.Columns>
+        </DataGrid>
+            <Button x:Name="buttonRefresh" Grid.Column="5" Grid.Row="1" Content="Odśwież przeglądy" Click="ButtonRefresh_Click"/>
+            <DataGrid x:Name="gridCar" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" Visibility="Hidden" Width="690" Margin="0,10,0,0" Height="335">
+            <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=ID_CAR}" Header="ID" Visibility="Collapsed"/>
+                <DataGridTextColumn Binding="{Binding Path=Firma}" Header="Firma" Visibility="Collapsed"/>
+                <DataGridTextColumn Binding="{Binding Path=Marka}" Header="Marka"/>
+                <DataGridTextColumn Binding="{Binding Path=Model}" Header="Model"/>
+                <DataGridTextColumn Binding="{Binding Path=Rocznik}" Header="Rocznik"/>
+                <DataGridTextColumn Binding="{Binding Path=Rejestracja}" Header="Rejestracja"/>
+                <DataGridTextColumn Binding="{Binding Path=NrDowoduRejestracyjnego}" Visibility="Collapsed" Header="Nr Dowodu Rejestracyjnego"/>
+                <DataGridTextColumn Binding="{Binding Path=DataWydaniaDowoduRejestracyjnego}" Visibility="Collapsed" Header="Data WydaniaDowodu Rejestrayjnego"/>
+                <DataGridTextColumn Binding="{Binding Path=Rodzaj}" Visibility="Collapsed" Header="Rodzaj"/>
+                <DataGridTextColumn Binding="{Binding Path=VIN}" Visibility="Collapsed" Header="VIN"/>
+                <DataGridTextColumn Binding="{Binding Path=DataRejestracji}" Visibility="Collapsed" Header="Data Rejestracji"/>
+                <DataGridTextColumn Binding="{Binding Path=KartaPojazdu}" Visibility="Collapsed" Header="Karta Pojazdu"/>
+                <DataGridTextColumn Binding="{Binding Path=Moc}" Visibility="Collapsed" Header="Moc"/>
+                <DataGridTextColumn Binding="{Binding Path=Pojemnosc}" Visibility="Collapsed" Header="Pojemność"/>
+                <DataGridTextColumn Binding="{Binding Path=RodzajPaliwa}" Visibility="Collapsed" Header="Rodzaj Paliwa"/>
+                <DataGridTextColumn Binding="{Binding Path=MasaWlasna}" Visibility="Collapsed" Header="Masa Własna"/>
+                <DataGridTextColumn Binding="{Binding Path=DMC}" Visibility="Collapsed" Header="DMC"/>
+                <DataGridTextColumn Binding="{Binding Path=DniDoUbezpieczenia}" Header="Dni ubezpieczenia"/>
+                <DataGridTextColumn Binding="{Binding Path=DniDoPrzegladu}" Header="Dni przeglądu"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="buttonFiltrOk" Content="Zatwierdź" Grid.Column="1" Grid.Row="4" Width="100" Click="ButtonFilterOk_Click" Visibility="Hidden" Margin="5"/>
+    </Grid>
+    </Viewbox>
+</Window>

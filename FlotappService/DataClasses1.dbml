@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Powiadamiacz" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERWER-SQL\CDN;Initial Catalog=Powiadamiacz;Persist Security Info=True;User ID=SA" SettingsObjectName="FlotappService.Properties.Settings" SettingsPropertyName="PowiadamiaczConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Przeglady" Member="Przeglady">
+    <Type Name="Przeglady">
+      <Column Name="ID_INSPECTION" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Warsztat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DataRozpoczecia" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DataZakonczenia" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Archiwalny" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_CAR_fk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Samochody" Member="Samochody">
+    <Type Name="Samochody">
+      <Column Name="ID_CAR" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Firma" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Marka" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Rocznik" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Rejestracja" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="NrDowoduRejestracyjnego" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DataWydaniaDowoduRejestracyjnego" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Rodzaj" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="VIN" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="DataRejestracji" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="KartaPojazdu" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Moc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pojemnosc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RodzajPaliwa" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MasaWlasna" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DMC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DniDoUbezpieczenia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DniDoPrzegladu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ubezpieczenia" Member="Ubezpieczenia">
+    <Type Name="Ubezpieczenia">
+      <Column Name="ID_INSURANCE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Firma" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DataRozpoczecia" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DataZakonczenia" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Cena" Type="System.Decimal" DbType="Decimal(16,2)" CanBeNull="true" />
+      <Column Name="ID_CAR_fk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Archiwalny" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kontakty" Member="Kontakty">
+    <Type Name="Kontakty">
+      <Column Name="ID_CONTACT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Nazwisko" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

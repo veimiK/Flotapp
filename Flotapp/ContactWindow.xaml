@@ -1,0 +1,44 @@
+﻿<Window x:Class="Flotapp.ContactWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flotapp"
+        mc:Ignorable="d"
+        Title="Kontakty" Height="465" Width="430">
+    <Viewbox>
+    <Grid>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+        <Button x:Name="buttonAddContact" Grid.Column="1" Grid.Row="1" Content="Dodaj kontakt" Margin="5" Padding="5" Click="ButtonAddContact_Click"/>
+        <Button x:Name="buttonEditContact" Grid.Column="2" Grid.Row="1" Content="Edytuj kontakt" Padding="5" Margin="5" Click="ButtonEditContact_Click"/>
+        <Button x:Name="buttonRemoveContact" Grid.Column="3" Grid.Row="1" Content="Usuń kontakt" Padding="5" Margin="5" Click="ButtonRemoveContact_Click"/>
+            <DataGrid x:Name="gridContacts" Grid.Column="1" Grid.Row="2" AutoGenerateColumns="False" Grid.ColumnSpan="3" Height="320" CanUserAddRows="False" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ID_CONTACT}" Header="ID_CONTACT" Visibility="Collapsed"/>
+                <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email"/>
+                <DataGridTextColumn Binding="{Binding Path=Imie}" Header="Imie"/>
+                <DataGridTextColumn Binding="{Binding Path=Nazwisko}" Header="Nazwisko"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="buttonRefresh" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Content="Odśwież kontakty" HorizontalAlignment="Center" Margin="5" Padding="5" Click="ButtonRefresh_Click"/>
+    </Grid>
+    </Viewbox>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="Flotapp.DictionaryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flotapp"
+        mc:Ignorable="d"
+        Title="Słownik" Height="450" Width="320">
+    <Viewbox>
+    <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20px"/>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20px"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="buttonFirmy" Grid.Column="1" Grid.Row="1" Width="140" Height="50" Content="Edytuj firmy" Padding="5px" Margin="5px" Click="buttonFirmy_Click"/>
+            <Button x:Name="buttonNadwozia" Grid.Column="1" Grid.Row="2" Width="140" Height="50" Content="Edytuj nadwozia" Padding="5px" Margin="5px" Click="buttonNadwozia_Click"/>
+            <Button x:Name="buttonPaliwa" Grid.Column="1" Grid.Row="3" Width="140" Height="50" Content="Edytuj paliwa" Padding="5px" Margin="5px" Click="buttonPaliwa_Click"/>
+        </Grid>
+    </Viewbox>
+</Window>
