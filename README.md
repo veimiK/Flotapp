@@ -1,0 +1,2 @@
+# Flotapp
+Flotapp is my first "big" project. It was developed with an intention to help companies with managing their car fleet. Flotapp supports sending notifications via email. You can get notifications about an upcoming technical inspection of a car, or an expiring insurance. All cars have to be added manually to the database. 
